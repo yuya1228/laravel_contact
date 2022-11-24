@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>お問い合わせ</title>
-    <link rel="stylesheet" href="resources/css/style.css">
-</head>
-<body>
+@extends('layouts.layout')
+
+    @section('contact')
     <h1>お問い合わせ</h1>
     <div class="contact">
         <form action="" method="POST">
@@ -16,7 +9,7 @@
                 <input type="text" required="required" name="surname">
                 <input type="text" required="required" name="firstname">
 
-            <p>性別</p>
+            <span>性別</span>
                 <input type="radio" required="required" name="gender"><label for="gender_radio">男性</label>
                 <input type="radio" required="required" name="gender"><label for="gender_radio">女性</label>
 
@@ -39,5 +32,4 @@
             <button>確認</button>
         </form>
     </div>
-</body>
-</html>
+    @endsection
