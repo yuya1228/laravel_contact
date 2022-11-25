@@ -8,8 +8,6 @@
     <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet">
 </head>
 <body>
-    <div class="contact">
         @yield('contact')
-    </div>
 </body>
 </html>
