@@ -1,3 +1,101 @@
+h1 {
+    margin-left: 10%;
+}
+
 span {
-    color:red;
+    color: red;
+}
+
+.contact label {
+    font-weight: bold;
+}
+
+.sur_name {
+    border-radius: 5px;
+    height: 30px;
+    width: 100%;
+    border: 1px solid;
+}
+
+.first_name {
+    border-radius: 5px;
+    height: 30px;
+    width: 145%;
+    border: 1px solid;
+    margin-left: 10%;
+}
+
+.example_name {
+    margin-left: 10%;
+    opacity: 0.3;
+}
+
+.example_firstname {
+    margin-left: 20%;
+    opacity: 0.3;
+}
+
+.email {
+    border-radius: 5px;
+    height: 30px;
+    width: 200%;
+    border: 1px solid;
+}
+
+.test_email {
+    margin-left: 10%;
+    opacity: 0.3;
+}
+
+.post {
+    border-radius: 5px;
+    height: 30px;
+    width: 170%;
+    border: 1px solid;
+}
+
+.post_number {
+    margin-left: 10%;
+    opacity: 0.3;
+}
+
+.address {
+    border-radius: 5px;
+    height: 30px;
+    width: 200%;
+    border: 1px solid;
+}
+
+.address_name {
+    margin-left: 10%;
+    opacity: 0.3;
+}
+
+.building_name {
+    border-radius: 5px;
+    height: 30px;
+    width: 200%;
+    border: 1px solid;
+}
+
+.building {
+    margin-left: 10%;
+    opacity: 0.3;
+}
+
+textarea {
+    border-radius: 5px;
+    height: 100px;
+    width: 200%;
+}
+
+button {
+    background-color: black;
+    color: white;
+    width: 8%;
+    padding: 1%;
+    margin-left: 12%;
+    margin-top: 2%;
+    border-radius: 7px;
+    border: 1px solid;
 }

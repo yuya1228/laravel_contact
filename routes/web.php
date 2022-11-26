@@ -9,4 +9,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('contact',ContactController::class);
+Route::get('contact',[ContactController::class, 'index'])->name('contact.index');
+Route::post('contact/confirm',[ContactController::class,'confirm'])->name('contact.confirm');
+Route::get('contact/thanks',[ContactController::class,'thanks'])->name('contact.thanks');

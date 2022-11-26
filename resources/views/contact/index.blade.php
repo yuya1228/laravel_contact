@@ -3,45 +3,68 @@
 @section('contact')
     <h1>お問い合わせ</h1>
     <div class="contact">
-        <form action="" method="POST">
+        <form action="{{ route('contact.confirm') }}" method="POST" name="inquiry">
             @csrf
             <table>
                 <tr>
-                    <td><label>お名前</label><span>※</span></td>
-                    <td><input type="text" required="required" name="surname"></td>
-                    <td><input type="text" required="required" name="firstname"></td>
-                </tr>
-
-                <tr>
-                    <td><label>性別</label><span>※</span></td>
-                    <td><input type="radio" required="required" name="gender"><label for="gender_radio">男性
-                            <input type="radio" required="required" name="gender"><label for="gender_radio">女性</td>
-                </tr>
-
-                <tr>
-                    <td><label>メールアドレス</label><span>※</span></td>
-                    <td><input type="text" required="required" name="email"></td>
-                </tr>
-
-                <tr>
-                    <td><label>郵便番号</label><span>※</span></td>
-                    <td>〒<input type="text" required="required" name="postnumber"></td>
-                </tr>
-
-                <tr>
-                    <td><label>住所</label><span>※</span></td>
-                    <td><input type="text" required="required" name="address"></td>
-                </tr>
-
-                <tr>
-                    <td><label>建物名</label></td>
-                    <td><input type="building_name"></td>
-                </tr>
-
-                <tr>
-                    <td><label>ご意見</label><span>※</span></td>
+                    <th><label>お名前<span>※</span></label></th>
                     <td>
-                        <textarea name="text" required="required"></textarea>
+                        <p><input type="text" class="sur_name" name="surname" value="{{ old('surname') }}"></p>
+                        <p class="example_name">例) 山田</p>
+                    </td>
+                    <td>
+                        <p><input type="text" class="first_name" name="firstname" value="{{ old('firstname') }}"></p>
+                        <p class="example_firstname">例) 太郎</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th><label>性別<span>※</span></label></th>
+                    <td>
+                        <input type="radio" id="man" name="gender" value="{{ old('gender') }}" checked="checked">
+                        <label for="man">男性</label>
+                        <input type="radio" id="woman" name="gender" value="{{ old('gender') }}">
+                        <label for="woman">女性</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th><label>メールアドレス<span>※</span></label></th>
+                    <td>
+                        <p><input type="text" class="email" name="email" value="{{ old('email') }}"></p>
+                        <p class="test_email">例) test@example.com</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th><label>郵便番号<span>※</span></label></th>
+                    <td>
+                        <p>〒<input type="text" class="post" name="postnumber" value="{{ old('postnumber') }}"></p>
+                        <p class="post_number">例) 123-4567</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th><label>住所<span>※</span></label></th>
+                    <td>
+                        <p><input type="text" class="address" name="address" value="{{ old('address') }}"></p>
+                        <p class="address_name">例) 東京都渋谷区千駄ヶ谷1-2-3</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th><label>建物名</label></th>
+                    <td>
+                        <p><input class="building_name" type="text" name="building_number"
+                                value="{{ old('building_number') }}"></p>
+                        <p class="building">例) 千駄ヶ谷マンション101</p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th><label>ご意見<span>※</span></label></th>
+                    <td>
+                        <textarea name="text" value="{{ old('text') }}" class="opnion"></textarea>
                     </td>
                 </tr>
             </table>
