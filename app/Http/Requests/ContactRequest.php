@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\ZipCodeRule;
 
 class ContactRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class ContactRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,13 +25,25 @@ class ContactRequest extends FormRequest
     public function rules()
     {
         return [
-            'surname'=>'required|string',
-            'firstname'=>'required|string',
-            'gender'=>'required|accepted',
-            'email'=>'required|email',
-            'postnumber'=>'required|numeric|max:8',
-            'address'=>'required',
-            'text'=>'required|integer|max:120',
+            'surname'=>['required'],
+            'firstname'=>['required'],
+            'gender'=>['required'],
+            'email'=>['required','email'],
+            'postnumber'=>['required','max:8', new ZipCodeRule()],
+            'address'=>['required'],
+            'text'=>['required','max:120']
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'surname.required' => '苗字を入力してください。',
+            'firstname.required' => '名前を入力してください。',
+            'email.required' => 'メールアドレスを入力してください。',
+            'postnumber.required'=>'郵便番号を入力してください。',
+            'address.required'=>'住所を入力してください。',
+            'text.required'=>'ご意見ください。'
         ];
     }
 }

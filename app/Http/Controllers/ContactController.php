@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
+use App\Rules\ZipCodeRule;
 
 class ContactController extends Controller
 {
@@ -17,12 +18,20 @@ class ContactController extends Controller
     {
         return view('contact.index');
     }
-    public function confirm(Request $request)
+
+    public function confirm(ContactRequest $request)
     {
         $inputs = $request->all();
-        dd($inputs);
-        return view('contact.confirm',[
-            'inputs'=>$inputs,
+        return view('contact.confirm',
+        ['inputs'=>$inputs,
         ]);
+    }
+
+    public function thanks(Request $request)
+    {
+        $contact = new Contact();
+        $contact->create(['fullname','gender','email','postcode','address','building_name','opinion'])
+        ->save();
+        return view('contact.thanks');
     }
 }

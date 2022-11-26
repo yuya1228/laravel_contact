@@ -3,8 +3,8 @@
 @section('contact')
     <form method="POST" action="{{ route('contact.thanks') }}">
         @csrf
-        <div class="content">
-            <h1>内容確認</h1>
+        <h1 class="inquiry">内容確認</h1>
+        <div class="contact">
             <table>
                 <tr>
                     <th><label>お名前</label></th>

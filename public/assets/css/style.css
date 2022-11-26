@@ -6,6 +6,11 @@ span {
     color: red;
 }
 
+.post_box {
+    display: flex;
+    ;
+}
+
 .contact table {
     border-spacing: 40px 0px;
 }
@@ -48,7 +53,7 @@ span {
 .post {
     border-radius: 5px;
     height: 30px;
-    width: 170%;
+    width: 200%;
     border: 1px solid;
 }
 
@@ -102,4 +107,20 @@ button {
 
 .fix {
     margin-left: 11.3%;
+}
+
+.inquiry {
+    margin-left: 10%;
+    }
+
+.thanks {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    width: 8%;
+    padding: 1%;
+    margin-left: 17%;
+    margin-top: 2%;
+    border-radius: 7px;
+    border: 1px solid;
 }
