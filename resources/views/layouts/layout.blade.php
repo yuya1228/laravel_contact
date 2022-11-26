@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>お問い合わせ</title>
     <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet">
+
 </head>
 <body>
         @yield('contact')

@@ -1,9 +1,17 @@
-h1 {
-    margin-left: 10%;
+.contact h1 {
+    margin-left: 17%;
 }
 
 span {
     color: red;
+}
+
+.contact table {
+    border-spacing: 40px 0px;
+}
+
+.contact th {
+    vertical-align: top;
 }
 
 .contact label {
@@ -25,13 +33,8 @@ span {
     margin-left: 10%;
 }
 
-.example_name {
+.example {
     margin-left: 10%;
-    opacity: 0.3;
-}
-
-.example_firstname {
-    margin-left: 20%;
     opacity: 0.3;
 }
 
@@ -42,21 +45,11 @@ span {
     border: 1px solid;
 }
 
-.test_email {
-    margin-left: 10%;
-    opacity: 0.3;
-}
-
 .post {
     border-radius: 5px;
     height: 30px;
     width: 170%;
     border: 1px solid;
-}
-
-.post_number {
-    margin-left: 10%;
-    opacity: 0.3;
 }
 
 .address {
@@ -66,21 +59,11 @@ span {
     border: 1px solid;
 }
 
-.address_name {
-    margin-left: 10%;
-    opacity: 0.3;
-}
-
 .building_name {
     border-radius: 5px;
     height: 30px;
     width: 200%;
     border: 1px solid;
-}
-
-.building {
-    margin-left: 10%;
-    opacity: 0.3;
 }
 
 textarea {
@@ -92,10 +75,31 @@ textarea {
 button {
     background-color: black;
     color: white;
+    font-size: 20px;
     width: 8%;
     padding: 1%;
-    margin-left: 12%;
+    margin-left: 17%;
     margin-top: 2%;
     border-radius: 7px;
     border: 1px solid;
+}
+
+.content h1 {
+    margin-left: 10%;
+}
+
+.send {
+    background-color: black;
+    color: white;
+    font-size: 17px;
+    width: 8%;
+    padding: 1%;
+    margin-left: 9%;
+    margin-top: 2%;
+    border-radius: 7px;
+    border: 1px solid;
+}
+
+.fix {
+    margin-left: 11.3%;
 }

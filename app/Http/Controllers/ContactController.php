@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -12,13 +13,16 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         return view('contact.index');
     }
     public function confirm(Request $request)
     {
-        $contacts = $request->inquiry;
-        return view(contact.confirm,compact('contact'));
+        $inputs = $request->all();
+        dd($inputs);
+        return view('contact.confirm',[
+            'inputs'=>$inputs,
+        ]);
     }
 }
