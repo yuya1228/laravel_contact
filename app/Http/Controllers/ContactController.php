@@ -49,4 +49,11 @@ class ContactController extends Controller
         return redirect()->route('contact')
          ->with(['message' => 'お問い合わせが完了しました。', 'status'=> 'info']);
     }
+
+    public function search(Request $request)
+    {
+        $searchs = Contact::Paginate(4);
+        dd($searchs);
+        return view('contact.search',['searchs => $searchs']);
+    }
 }
