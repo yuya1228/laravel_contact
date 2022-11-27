@@ -27,11 +27,26 @@ class ContactController extends Controller
         ]);
     }
 
+    public function regist(Request $request)
+    {
+        if ($request->get('back')) {
+        return redirect('contact.index')->withInput();
+    }
+    return;
+    }
+
     public function thanks(Request $request)
     {
-        $contact = new Contact();
-        $contact->create(['fullname','gender','email','postcode','address','building_name','opinion'])
-        ->save();
-        return view('contact.thanks');
+        Contact::create([
+            'fullname'=>$request->surname,
+            'gender'=>$request->gender,
+            'email'=>$request->email,
+            'postcode'=>$request->postcode,
+            'address'=>$request->address,
+            'building_name'=>$request->building_number,
+            'opinion'=>$request->text
+        ]);
+        return redirect()->route('contact')
+         ->with(['message' => 'お問い合わせが完了しました。', 'status'=> 'info']);
     }
 }

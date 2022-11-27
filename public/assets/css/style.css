@@ -8,7 +8,7 @@ span {
 
 .post_box {
     display: flex;
-    ;
+    align-items: center;
 }
 
 .contact table {

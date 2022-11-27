@@ -56,10 +56,10 @@
                     <td>
                         <div class="post_box">
                             <p> 〒</p>
-                            <input type="text" class="post" name="postnumber" value="{{ old('postnumber') }}">
+                            <input type="text" class="post" name="postcode" value="{{ old('postcode') }}">
                         </div>
                         <p class="example">例) 123-4567</p>
-                        @error('postnumber')
+                        @error('postcode')
                         {{$message}}
                     </td>
                     @enderror

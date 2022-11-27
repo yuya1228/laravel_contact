@@ -29,7 +29,7 @@ class ContactRequest extends FormRequest
             'firstname'=>['required'],
             'gender'=>['required'],
             'email'=>['required','email'],
-            'postnumber'=>['required','max:8', new ZipCodeRule()],
+            'postcode'=>['required','max:8', new ZipCodeRule()],
             'address'=>['required'],
             'text'=>['required','max:120']
         ];
@@ -41,7 +41,7 @@ class ContactRequest extends FormRequest
             'surname.required' => '苗字を入力してください。',
             'firstname.required' => '名前を入力してください。',
             'email.required' => 'メールアドレスを入力してください。',
-            'postnumber.required'=>'郵便番号を入力してください。',
+            'postcode.required'=>'郵便番号を入力してください。',
             'address.required'=>'住所を入力してください。',
             'text.required'=>'ご意見ください。'
         ];

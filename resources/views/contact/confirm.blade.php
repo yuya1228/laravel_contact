@@ -36,8 +36,8 @@
                 <tr>
                     <th><label>郵便番号</label></th>
                     <td>
-                        {{ $inputs['postnumber'] }}
-                        <input type="hidden" class="post" name="postnumber" value="{{ $inputs['postnumber'] }}">
+                        {{ $inputs['postcode'] }}
+                        <input type="hidden" class="post" name="postcode" value="{{ $inputs['postcode'] }}">
                     </td>
                 </tr>
 
@@ -67,7 +67,7 @@
                 </tr>
             </table>
             <button type="submit" name="action" value="submit" class="send">送信</button>
-            <p class="fix"><a href="{{ route('contact.index') }}">修正する</a></p>
+            <p class="fix"><a href="{{ route('contact.index') }}" name="back" value="true">修正する</a></p>
         </div>
     </form>
 @endsection
