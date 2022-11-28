@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Http\Requests\ContactRequest;
 use App\Rules\ZipCodeRule;
+use Illuminate\Pagination\Paginator;
 
 class ContactController extends Controller
 {
@@ -26,15 +27,6 @@ class ContactController extends Controller
         ['inputs'=>$inputs,
         ]);
     }
-
-    public function regist(Request $request)
-    {
-        if ($request->get('back')) {
-        return redirect('contact.index')->withInput();
-    }
-    return;
-    }
-
     public function thanks(Request $request)
     {
         Contact::create([
@@ -46,14 +38,21 @@ class ContactController extends Controller
             'building_name'=>$request->building_number,
             'opinion'=>$request->text
         ]);
-        return redirect()->route('contact')
-         ->with(['message' => 'お問い合わせが完了しました。', 'status'=> 'info']);
+
+        $postcode = $request ->postcode;
+        mb_convert_kana($postcode, "n");
+
+        return view('contact.thanks');
     }
 
-    public function search(Request $request)
+    public function search()
     {
-        $searchs = Contact::Paginate(4);
-        dd($searchs);
-        return view('contact.search',['searchs => $searchs']);
+        $contacts = Contact::Paginate(9);
+        return view('contact.search',['contacts' => $contacts]);
+    }
+
+    public function find(Request $request)
+    {
+        
     }
 }

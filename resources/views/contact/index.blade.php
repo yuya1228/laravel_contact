@@ -29,9 +29,9 @@
                 <tr>
                     <th><label>性別<span>※</span></label></th>
                     <td>
-                        <input type="radio" id="man" name="gender" value="男性" checked="checked">
+                        <input type="radio" id="man" name="gender" value="1" checked="checked">
                         <label for="man">男性</label>
-                        <input type="radio" id="woman" name="gender" value="女性">
+                        <input type="radio" id="woman" name="gender" value="2">
                         <label for="woman">女性</label>
                     </td>
                 </tr>
@@ -101,7 +101,7 @@
                     @enderror
                 </tr>
             </table>
-            <button type="submit">確認</button>
+            <button type="submit" class="contact_button">確認</button>
         </form>
     </div>
 @endsection

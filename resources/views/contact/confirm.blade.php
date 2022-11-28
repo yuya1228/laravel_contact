@@ -20,8 +20,10 @@
                     <th><label>性別</label></th>
                     <td>
                         {{ $inputs['gender'] }}
-                        <input type="hidden" id="man" name="gender" value="男性">
-                        <input type="hidden" id="woman" name="gender" value="女性">
+                        <input type="hidden" id="man" name="gender" value="1" >
+                        <label for="man"></label>
+                        <input type="hidden" id="woman" name="gender" value="2">
+                        <label for="woman"></label>
                     </td>
                 </tr>
 
@@ -66,7 +68,8 @@
                     </td>
                 </tr>
             </table>
-            <button type="submit" name="action" value="submit" class="send">送信</button>
+            <button type="submit" name="action" value="submit" class="send_button">
+                <a href="{{route('contact.thanks')}}"></a>送信</button>
             <p class="fix"><a href="{{ route('contact.index') }}" name="back" value="true">修正する</a></p>
         </div>
     </form>

@@ -10,12 +10,12 @@
 </head>
 
 <body>
-    <div class="management">
-        <h1>管理システム</h1>
-        <table>
+    <h1>管理システム</h1>
+    <div class="management_box">
+        <table class="management">
             <tr>
                 <th><label>お名前</label></th>
-                <td><input type="text"></td>
+                <td><input type="text" class="system_text"></td>
 
                 <th><label>性別</label></th>
                 <td>
@@ -28,25 +28,50 @@
 
             <tr>
                 <th><label>登録日</label></th>
-                <td>
-                    <input type="text">
-                </td>
-                <td>
-                    <span>~</span>
-                    <input type="text">
-                </td>
+                <div class="register">
+                    <td>
+                        <input type="text" class="system_text">
+                    </td>
+                    <td>
+                        <span>~</span>
+                    </td>
+                    <td>
+                        <input type="text" class="system_text">
+                    </td>
+                </div>
             </tr>
 
             <tr>
                 <th><label>メールアドレス</label></th>
                 <td>
-                    <input type="text">
+                    <input type="text" class="system_text">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button class="search_button">検索</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="" class="search_liset"><p>リセット</p></a>
                 </td>
             </tr>
         </table>
-        <button class="search_button">検索</button>
-        <a href="">リセット</a>
     </div>
+
+{{ $contacts->links('pagination::bootstrap-4') }}
+
+    <table class="search_system">
+        <tr>
+            <th>ID</th>
+            <th>お名前</th>
+            <th>性別</th>
+            <th>メールアドレス</th>
+            <th>ご意見</th>
+        </tr>
+    </table>
 </body>
 
 </html>
