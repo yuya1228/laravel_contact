@@ -41,7 +41,7 @@
                         <p><label>メールアドレス<span>※</span></label></p>
                     </th>
                     <td>
-                        <p><input type="text" class="email" name="email" value="{{ old('email') }}"></p>
+                        <p><input type="text" class="text_line" name="email" value="{{ old('email') }}"></p>
                         <p class="example">例) test@example.com</p>
                         @error('email')
                         {{$message}}
@@ -56,7 +56,7 @@
                     <td>
                         <div class="post_box">
                             <p> 〒</p>
-                            <input type="text" class="post" name="postcode" value="{{ old('postcode') }}">
+                            <input type="text" class="text_line" name="postcode" value="{{ old('postcode') }}">
                         </div>
                         <p class="example">例) 123-4567</p>
                         @error('postcode')
@@ -70,7 +70,7 @@
                         <p><label>住所<span>※</span></label></p>
                     </th>
                     <td>
-                        <p><input type="text" class="address" name="address" value="{{ old('address') }}"></p>
+                        <p><input type="text" class="text_line" name="address" value="{{ old('address') }}"></p>
                         <p class="example">例) 東京都渋谷区千駄ヶ谷1-2-3</p>
                         @error('address')
                         {{$message}}
@@ -83,7 +83,7 @@
                         <p><label>建物名</label></p>
                     </th>
                     <td>
-                        <p><input class="building_name" type="text" name="building_number"
+                        <p><input class="text_line" type="text" name="building_number"
                                 value="{{ old('building_number') }}"></p>
                         <p class="example">例) 千駄ヶ谷マンション101</p>
                     </td>

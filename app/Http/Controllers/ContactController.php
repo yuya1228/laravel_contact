@@ -45,14 +45,23 @@ class ContactController extends Controller
         return view('contact.thanks');
     }
 
-    public function search()
+    public function search(Request $request)
     {
+
+        $contacts = Contact::all();
         $contacts = Contact::Paginate(9);
         return view('contact.search',['contacts' => $contacts]);
     }
 
-    public function find(Request $request)
+    public function find()
     {
-        
+        return view('contact.find');
+    }
+
+    public function destroy($id)
+    {
+        $contacts = Contact::find($id);
+        $contacts->delete();
+        return redirect()->route('contact.search');
     }
 }

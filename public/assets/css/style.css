@@ -43,28 +43,7 @@ span {
     opacity: 0.3;
 }
 
-.email {
-    border-radius: 5px;
-    height: 30px;
-    width: 200%;
-    border: 1px solid;
-}
-
-.post {
-    border-radius: 5px;
-    height: 30px;
-    width: 200%;
-    border: 1px solid;
-}
-
-.address {
-    border-radius: 5px;
-    height: 30px;
-    width: 200%;
-    border: 1px solid;
-}
-
-.building_name {
+.text_line {
     border-radius: 5px;
     height: 30px;
     width: 200%;
@@ -125,6 +104,10 @@ textarea {
     border: 1px solid;
 }
 
+.system_title {
+    margin-left: 21%;
+}
+
 .management {
     border: solid 1px;
     width: 50%;
@@ -172,5 +155,22 @@ textarea {
 
 .search_system {
     border-bottom: 1px solid;
+    text-align: center;
     width: 50%;
+}
+
+.opinion_text {
+    width: 50%;
+}
+
+.delete_button {
+
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    width: 65px;
+    height: 30px;
+    padding: 1%;
+    border-radius: 5px;
+    border: 1px solid;
 }

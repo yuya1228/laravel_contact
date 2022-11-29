@@ -4,7 +4,7 @@
     <h1 class="system_title">管理システム</h1>
     <div class="management_box">
         <table class="management">
-            <form action="{{ route('contact.find') }}" method="post">
+            <form action="{{ url('/find') }}" method="post">
                 @csrf
                 <tr>
                     <th>
@@ -52,7 +52,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <a href="{{ route('contact.search') }}" class="search_liset">
+                        <a href="{{ route('contact.find') }}" class="search_liset">
                             <p>リセット</p>
                         </a>
                     </td>
@@ -60,8 +60,6 @@
             </form>
         </table>
     </div>
-
-    {{ $contacts->links('pagination::bootstrap-4') }}
 
     <table class="search_system">
         <tr>
@@ -71,31 +69,4 @@
             <th>メールアドレス</th>
             <th>ご意見</th>
         </tr>
-        @foreach ($contacts as $contact)
-            <tr>
-                <td>
-                    {{ $contact->id }}
-                </td>
-                <td>
-                    {{ $contact->fullname }}
-                </td>
-                <td>
-                    {{ $contact->gender }}
-                </td>
-                <td>
-                    {{ $contact->email }}
-                </td>
-                <td class="opinion_text">
-                    {{ $contact->opinion }}
-                </td>
-                <td>
-                    <form action="{{ route('contact.destroy', ['id' => $contact->id]) }}" method="POST">
-                        @csrf
-                        @method('DELETE');
-                        <button class="delete_button">削除</button>
-                    </form>
-                </td>
-        @endforeach
-        </tr>
-    </table>
 @endsection
