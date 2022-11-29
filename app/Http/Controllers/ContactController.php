@@ -27,6 +27,7 @@ class ContactController extends Controller
         ['inputs'=>$inputs,
         ]);
     }
+
     public function thanks(Request $request)
     {
         Contact::create([
@@ -47,24 +48,18 @@ class ContactController extends Controller
 
     public function search(Request $request)
     {
-        $keyword = $request->input('keyword');
-        $query = Contact::query();
-        if(!empty($keyword))
-        {
-            $query->where([
-                ['fullname','LIKE','%'.$keyword.'%'],
-                ['gender','LIKE','%'.$keyword.'%'],
-                ['created_at','=','%'.$keyword.'%'],
-                ['email','LIKE','%'.$keyword.'%'],
-            ]);
-        }
-        $query = Contact::Paginate(9);
-        return view('contact.search',['contacts' => $query]);
-    }
+        $contacts = Contact::Paginate(9);
 
-    public function find()
-    {
-        return view('contact.find');
+        $keyword = $request->input('keyword');
+        $email = $request->input('email');
+        $query = Contact::query();
+        {
+            $query->where('fullname', 'like', '%' . $keyword . '%');
+            $query->where('email', 'like', '%' . $email . '%')->get();
+        }
+
+        $contacts = $query->paginate(9);
+        return view('contact.search',['contacts' => $contacts]);
     }
 
     public function destroy($id)

@@ -68,7 +68,7 @@
                     </td>
                 </tr>
             </table>
-            <button type="submit" name="action" value="submit" class="send_button">
+            <button type="submit" name="regist" value="true" class="send_button">
                 <a href="{{route('contact.thanks')}}"></a>送信</button>
             <p class="fix"><a href="{{ route('contact.index') }}" name="back" value="true">修正する</a></p>
         </div>

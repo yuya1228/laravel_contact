@@ -112,6 +112,7 @@ textarea {
     border: solid 1px;
     width: 50%;
     height: 250px;
+    position: relative;
 }
 
 .system_text {
@@ -136,6 +137,7 @@ textarea {
     padding: 1%;
     margin-left: 170%;
     margin-top: 10%;
+    margin-bottom:20%;
     border-radius: 5px;
     border: 1px solid;
 }
@@ -164,7 +166,6 @@ textarea {
 }
 
 .delete_button {
-
     background-color: black;
     color: white;
     font-size: 15px;
@@ -173,4 +174,32 @@ textarea {
     padding: 1%;
     border-radius: 5px;
     border: 1px solid;
+}
+
+.thanks_page {
+    text-align: center;
+    position: relative;
+}
+.thanks_page {
+position: absolute;
+top: 40%;
+left: 30%;
+}
+.thanks_button {
+    background-color: black;
+    color: white;
+    font-size: 17px;
+    width: 60%;
+    height: 55px;
+    padding: 1%;
+    margin-top: 10%;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+.reset_button {
+    position: absolute;
+    left: 48%;
+    bottom : 2%;
+    border-bottom: solid 1px;
 }
