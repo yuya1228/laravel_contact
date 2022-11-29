@@ -47,10 +47,19 @@ class ContactController extends Controller
 
     public function search(Request $request)
     {
-
-        $contacts = Contact::all();
-        $contacts = Contact::Paginate(9);
-        return view('contact.search',['contacts' => $contacts]);
+        $keyword = $request->input('keyword');
+        $query = Contact::query();
+        if(!empty($keyword))
+        {
+            $query->where([
+                ['fullname','LIKE','%'.$keyword.'%'],
+                ['gender','LIKE','%'.$keyword.'%'],
+                ['created_at','=','%'.$keyword.'%'],
+                ['email','LIKE','%'.$keyword.'%'],
+            ]);
+        }
+        $query = Contact::Paginate(9);
+        return view('contact.search',['contacts' => $query]);
     }
 
     public function find()

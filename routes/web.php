@@ -14,7 +14,7 @@ Route::get('contact/confirm',[ContactController::class,'confirm']);
 Route::post('contact/confirm',[ContactController::class,'confirm'])->name('contact.confirm');
 Route::post('contact/thanks',[ContactController::class,'thanks'])->name('contact.thanks');
 Route::get('contact/search',[ContactController::class,'search'])->name('contact.search');
-Route::get('contact/find',[ContactController::class,'find'])->name('contact.find');
+Route::get('/find',[ContactController::class,'find']);
 Route::delete('/destroy{id}',[ContactController::class,'destroy'])->name('contact.destroy');
 
 
